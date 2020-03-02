@@ -5,8 +5,11 @@
 //  Created by EatMoreOranges on 2/19/20.
 //  Copyright © 2020 EatMoreOranges. All rights reserved.
 //
+// parse-dashboard --appId myAppId --masterKey myMasterKey --serverURL "http://morning-plateau-99760.herokuapp.com/parse"
+
 
 import UIKit
+import Parse // New! I added this
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "myAppId"
+                configuration.server = "http://morning-plateau-99760.herokuapp.com/parse"
+            })
+        )
+        
         return true
     }
 
