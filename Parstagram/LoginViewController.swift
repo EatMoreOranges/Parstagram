@@ -59,7 +59,6 @@ class LoginViewController: UIViewController {
 //                print("Error:\(error)")
 //            }
 //        }
-        
 //        let user = PFUser()
 //        user.username = usernameField.text
 //        user.password = passwordField.text
@@ -81,10 +80,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onSignIn(_ sender: Any) {
+        let username = usernameField.text!
+        let password = passwordField.text!
+        
+        PFUser.logInWithUsername(inBackground: username, password: password){
+            (user, error) in
+                if user != nil {
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                } else {
+                    print("Error:\(error)")
+            }
+        }
     }
 }
 
-
-// Parse Dashboard:
-
+// Parse Dashboard: run this to see new users...
 // parse-dashboard --appId myAppId --masterKey myMasterKey --serverURL "http://morning-plateau-99760.herokuapp.com/parse"
