@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import AlamofireImage // so you can resize the image to upload to heroku
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -37,7 +37,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
-        let size = CGSize(width: 300, height: 300)
+        let size = CGSize(width: 300, height: 300) // import alamofireimage so you can resize the image to upload to heroku
         let scaledImage = image.af_imageScaled(to: size)
         
         imageView.image = scaledImage
@@ -45,17 +45,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     @IBAction func onSubmitButton(_ sender: Any) {
+        
+        
     }
     
 }
