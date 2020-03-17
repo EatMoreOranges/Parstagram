@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JTe-gZ-qVo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -74,7 +74,7 @@
                     <connections>
                         <outlet property="passwordField" destination="ngb-J8-k5b" id="FaN-v0-aR5"/>
                         <outlet property="usernameField" destination="F4j-6B-VX3" id="3Lx-QP-baq"/>
-                        <segue destination="vB2-RP-mWp" kind="presentation" identifier="loginSegue" id="0uq-l6-sOZ"/>
+                        <segue destination="vB2-RP-mWp" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="0uq-l6-sOZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,7 +101,7 @@
             <objects>
                 <viewController id="wyf-ML-FeH" customClass="FeedViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wBG-ko-8je">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="KTy-Ex-sBM"/>
@@ -109,7 +109,7 @@
                     <navigationItem key="navigationItem" id="tRr-4q-Tqv">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="PY7-N8-Js4">
                             <connections>
-                                <segue destination="JTe-gZ-qVo" kind="presentation" id="boM-K4-Ni6"/>
+                                <segue destination="JTe-gZ-qVo" kind="presentation" modalPresentationStyle="automatic" id="boM-K4-Ni6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -124,7 +124,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vB2-RP-mWp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C0o-eO-rwr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -141,7 +141,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="JTe-gZ-qVo" customClass="CameraViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gOx-eE-3az">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6ny-r8-CWM">
@@ -170,6 +170,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="F87-TN-SFR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="E9y-2R-cNI"/>
                     <connections>
                         <outlet property="commentField" destination="rDO-fp-rue" id="Sso-Q8-dVY"/>
                         <outlet property="imageView" destination="6ny-r8-CWM" id="D9o-lS-DGd"/>

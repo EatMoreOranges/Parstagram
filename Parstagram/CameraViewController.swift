@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 import AlamofireImage // so you can resize the image to upload to heroku
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -46,6 +47,27 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     @IBAction func onSubmitButton(_ sender: Any) {
+        let post = PFObject(className: "Posts")// this is the table with the name "post"
+        
+        //bellow are the dictionary entries for the Posts table
+        post["caption"] = commentField.text!
+        post["author"] = PFUser.current()!
+        
+        let imageData = imageView.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        
+        post["image"] = file
+        
+        post.saveInBackground { (Success, Error) in
+            if Success {
+                self.dismiss(animated: true, completion: nil)
+                print("Saved Successfully!")
+            } else {
+                print("Error!")
+            }
+        }
+        
+        
         
         
     }
